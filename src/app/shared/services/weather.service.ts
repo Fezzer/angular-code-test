@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { City } from '../models/city.model';
+import { CityApi } from '../models/city-api.model';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +12,7 @@ export class WeatherService {
 
     constructor(private httpClient: HttpClient) { }
 
-    public getCityWeather(cityName: string): Observable<City> {
-        return this.httpClient.get<City>(`${this.apiUrl}?q=${cityName}&appid=${this.apiKey}`);
+    public getCityWeather(cityName: string): Observable<CityApi> {
+        return this.httpClient.get<CityApi>(`${this.apiUrl}?q=${cityName}&appid=${this.apiKey}`);
     }
 }

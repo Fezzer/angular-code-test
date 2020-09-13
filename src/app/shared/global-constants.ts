@@ -5,4 +5,6 @@ export class GlobalConstants {
   public static weatherPageName: string = 'weather';
   // TASK: 5 - Add constants for the test page.
   public static testPageName: string = 'test';
+  // TASK: 7 - Add constants for the test page.
+  public static weatherViewPageName: string = 'weatherview';
 }

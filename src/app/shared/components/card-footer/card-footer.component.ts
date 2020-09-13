@@ -13,6 +13,7 @@ export class CardFooterComponent implements OnInit {
   showList: boolean;
   showWeather: boolean;
   showTest: boolean;
+  showWeatherView: boolean;
 
   constructor() {
   }
@@ -22,5 +23,6 @@ export class CardFooterComponent implements OnInit {
     this.showList = this.pageName !== GlobalConstants.listPageName;
     this.showWeather = this.pageName !== GlobalConstants.weatherPageName;
     this.showTest = this.pageName !== GlobalConstants.testPageName;
+    this.showWeatherView = this.pageName !== GlobalConstants.weatherViewPageName;
   }
 }

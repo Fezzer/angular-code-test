@@ -1,0 +1,20 @@
+<div class="card">
+    <app-card-header></app-card-header>
+    <div class="card-body">
+        <form class="form-inline mb-3" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <label for="searchInput" class="mr-2">City search</label>
+            <input formControlName="search" type="text" class="form-control mr-2" id="searchInput">
+            <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Search</button>
+        </form>
+        <div *ngIf="city">
+            <p>City Name: {{ city.name }}</p>
+            <p>Latitude: {{ city.coord.lat }}</p>
+            <p>Longitude: {{ city.coord.lon }}</p>
+            <p>Temperature: {{ city.main.temp }}</p>
+            <p>Minimum Temperature: {{ city.main.temp_min }}</p>
+            <p>Maximum Temperature: {{ city.main.temp_max }}</p>
+            <p>Weather Status: {{ city.weather[0].main + ' - ' + city.weather[0].description }}</p>
+        </div>
+    </div>
+    <app-card-footer [pageName]='pageName'></app-card-footer>
+</div>

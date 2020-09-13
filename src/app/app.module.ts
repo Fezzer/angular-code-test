@@ -13,7 +13,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardHeaderComponent } from './shared/components/card-header/card-header.component';
 // TASK: 2 - Import of the card footer component.
 import { CardFooterComponent } from './shared/components/card-footer/card-footer.component';
+// TASK: 5 - Import of the test component.
 import { TestComponent } from './test/test.component';
+// TASK: 6 - Import of the weather list component.
+import { WeatherViewComponent } from './weather-view/weather-view.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { TestComponent } from './test/test.component';
     CardHeaderComponent,
     // TASK: 2 - Card footer component added to the declarations.
     CardFooterComponent,
-    TestComponent     
+    // TASK: 5 - Test component added to the declarations.
+    TestComponent,
+    // TASK: 6 - Weather list component added to the declarations.
+    WeatherViewComponent     
   ],
   imports: [
       BrowserModule,
