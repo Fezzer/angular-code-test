@@ -1,0 +1,67 @@
+
+<div class="card">
+    <!-- TASK: 1 - Added card header component. -->
+    <app-card-header></app-card-header>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <p>Add a city using the input field below.</p>
+                <!-- TASK: 6 - Label the input fields. -->
+                <div class="row">
+                    <div class="col-md-2">City</div>
+                    <div class="col-md-2">Minimum Temperature</div>
+                    <div class="col-md-2">Maximum Temperature</div>
+                    <div class="col-md-2">Current Temperature</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="name" #cityName>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="temp-min" [value]="exampleMinimumTemperature" #minimumTemperature>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="temp-max" [value]="exampleMaximumTemperature" #maximumTemperature>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="temp" [value]="exampleCurrentTemperature" #currentTemperature>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-warning" (click)="addCity()">Add</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Minimum Temperature</th>
+                            <th scope="col">Maximum Temperature</th>
+                            <th scope="col">Current Temperature</th>
+                            <th scope="col">Current Temperature in range?</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let city of sampleData">
+                            <td>{{ city.name }}</td>
+                            <td>{{ city.main.tempMin }}</td>
+                            <td>{{ city.main.tempMax }}</td>
+                            <td>{{ city.main.temp }}</td>
+                            <td>
+                                <!-- TASK: 6 - Update style to correctly display if the current temperature is between the min and the max values. -->
+                                <div class="square" [ngStyle]="{'background-color':
+                                    (city.main.temp > city.main.tempMax || city.main.temp < city.main.tempMin) ? 'red' : 'green'}"></div>
+                            </td>
+                            <!-- TASK: 6 - Add a button to delete a city. -->
+                            <td><button class="btn btn-secondary" (click)='deleteCity(city)'><i class="fa fa-trash"></i></button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TASK: 2 - Added card footer component. -->
+    <app-card-footer [pageName]='pageName'></app-card-footer>
+</div>

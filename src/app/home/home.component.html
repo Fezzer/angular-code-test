@@ -1,0 +1,12 @@
+<div class="card">
+    <!-- TASK: 1 - Added card header component. -->
+    <app-card-header></app-card-header>
+    <div class="card-body">
+        <!-- TASK: 4 - Hide the card body content until the data is populated. -->
+        <h4 *ngIf="pageContent.length">
+            {{ pageContent }} <button (click)="swapContent()">Change Text</button>
+        </h4>
+    </div>
+    <!-- TASK: 2 - Added card footer component. -->
+    <app-card-footer [pageName]='pageName'></app-card-footer>
+</div>

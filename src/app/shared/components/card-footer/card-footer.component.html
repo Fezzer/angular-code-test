@@ -1,0 +1,11 @@
+<!-- TASK: 2 - Card footer html centralised into a single component.
+             - Buttons dynamically show depending on the current page (very hard coded, I'm sure there's a better way to do this dynamically by detecting the current page, I'm presuming with Router).
+             - Button colours standardised to make them consistant across all cards.
+             - Margin added between buttons. -->
+<div class="card-footer text-right">
+    <a class="btn btn-primary" routerLink="/home" *ngIf='showHome'>Home</a>
+    <a class="btn btn-secondary ml-2" routerLink="/list" *ngIf='showList'>Tasks</a>
+    <a class="btn btn-secondary ml-2" routerLink="/list-weather" *ngIf='showWeather'>Weather</a>
+    <!-- TASK: 5 - Add a navigation button for the test page. -->
+    <a class="btn btn-secondary ml-2" routerLink="/test" *ngIf='showTest'>Test</a>
+</div>
